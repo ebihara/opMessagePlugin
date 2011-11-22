@@ -1,0 +1,58 @@
+# message list
+
+receiveList:
+  url: /message/receiveList
+  param: { module: message, action: list, type: receive }
+
+sendList:
+  url: /message/sendList
+  param: { module: message, action: list, type: send }
+
+draftList:
+  url: /message/draftList
+  param: { module: message, action: list, type: draft }
+
+dustList:
+  url: /message/dustList
+  param: { module: message, action: list, type: dust }
+
+# show message
+
+readReceiveMessage:
+  url: /message/read/:id
+  param: { module: message, action: show, type: receive }
+  requirements: { id: '\d+' }
+
+readSendMessage:
+  url: /message/check/:id
+  param: { module: message, action: show, type: send }
+  requirements: { id: '\d+' }
+
+readDustMessage:
+  url: /message/checkDelete/:id
+  param: { module: message, action: show, type: dust }
+  requirements: { id: '\d+' }
+
+# delete message
+
+deleteReceiveMessage:
+  url: /message/deleteReceiveMessage/:id
+  param: { module: message, action: delete, type: receive }
+  requirements: { id: '\d+' }
+
+deleteSendMessage:
+  url: /message/deleteSendMessage/:id
+  param: { module: message, action: delete, type: send }
+  requirements: { id: '\d+' }
+
+deleteDustMessage:
+  url: /message/deleteComplete/:id
+  param: { module: message, action: delete, type: dust }
+  requirements: { id: '\d+' }
+
+# delete message confirm
+
+deleteConfirmDustMessage:
+  url: /message/deleteConfirm/:id
+  param: { module: message, action: deleteConfirm, type: dust }
+  requirements: { id: '\d+' }
